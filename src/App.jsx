@@ -25,7 +25,11 @@ export default function App() {
     const saved = localStorage.getItem('portfolio_resume_data_prince_v4');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (parsed?.personal?.avatar?.includes('unsplash')) {
+          parsed.personal.avatar = initialResumeData.personal.avatar;
+        }
+        return parsed;
       } catch (e) {
         console.error('Failed to parse saved resume data', e);
       }
