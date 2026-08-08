@@ -22,7 +22,7 @@ export default function App() {
 
   // Resume dataset state (persisted to localStorage)
   const [resumeData, setResumeData] = useState(() => {
-    const saved = localStorage.getItem('portfolio_resume_data_prince_v4');
+    const saved = localStorage.getItem('portfolio_resume_data_prince_v5');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
@@ -54,7 +54,7 @@ export default function App() {
   // Save modified resume data to localStorage
   const handleSaveData = (newData) => {
     setResumeData(newData);
-    localStorage.setItem('portfolio_resume_data_prince_v4', JSON.stringify(newData));
+    localStorage.setItem('portfolio_resume_data_prince_v5', JSON.stringify(newData));
   };
 
   // Reset resume data back to default initial values
