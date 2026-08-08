@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Download, ArrowRight, MapPin, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './SocialIcons';
+import princeAvatar from '../assets/prince-raj-profile.jpg';
 
 export default function Hero({ personal, stats }) {
   const [typedText, setTypedText] = useState('');
@@ -115,11 +116,11 @@ export default function Hero({ personal, stats }) {
           <div className="avatar-frame animate-float">
             <div className="glow-backdrop"></div>
             <img
-              src={personal?.avatar || '/profile-avatar.png'}
-              alt={personal?.name}
+              src={princeAvatar}
+              alt={personal?.name || 'Prince Raj'}
               className="avatar-img"
               onError={(e) => {
-                e.target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';
+                e.target.src = princeAvatar;
               }}
             />
             <div className="avatar-badge glass-panel">
